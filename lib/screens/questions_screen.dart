@@ -19,18 +19,21 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   Widget build(context) {
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          StyledText(currentQuestion.question, fontSize: 15),
-          const SizedBox(
-            height: 30,
-          ),
-          AnswerOption(optionLabel: currentQuestion.answers[0], onPress: () {}),
-          AnswerOption(optionLabel: currentQuestion.answers[1], onPress: () {}),
-          AnswerOption(optionLabel: currentQuestion.answers[2], onPress: () {}),
-          AnswerOption(optionLabel: currentQuestion.answers[3], onPress: () {}),
-        ],
+      child: Container(
+        margin: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            StyledText(currentQuestion.question, fontSize: 15),
+            const SizedBox(
+              height: 30,
+            ),
+            ...currentQuestion.answers.map((answer) {
+              return AnswerOption(optionLabel: answer, onPress: () {});
+            }),
+          ],
+        ),
       ),
     );
   }
