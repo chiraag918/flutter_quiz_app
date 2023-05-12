@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StyledText extends StatelessWidget {
-  const StyledText(this.text,
-      {super.key, this.fontColor = Colors.white, required this.fontSize});
+  const StyledText(
+    this.text, {
+    super.key,
+    this.fontColor = Colors.white,
+    required this.fontSize,
+    this.googleFont = false,
+  });
 
   final String text;
   final Color fontColor;
   final double fontSize;
+  final bool googleFont;
 
   @override
   Widget build(context) {
     return Text(
       text,
-      style: TextStyle(color: fontColor, fontSize: fontSize),
+      style: googleFont
+          ? GoogleFonts.lato(
+              color: fontColor, fontSize: fontSize, fontWeight: FontWeight.bold)
+          : TextStyle(color: fontColor, fontSize: fontSize),
       textAlign: TextAlign.center,
     );
   }
