@@ -39,7 +39,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
           children: [
             StyledText(
               currentQuestion.question,
-              fontColor: Color.fromARGB(255, 205, 169, 255),
+              fontColor: const Color.fromARGB(255, 205, 169, 255),
               fontSize: 24,
               googleFont: true,
             ),

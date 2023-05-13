@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_quiz_app/custom_widgets/gradient_container.dart';
 import 'package:flutter_quiz_app/data/questions.dart';
 import 'package:flutter_quiz_app/screens/questions_screen.dart';
+import 'package:flutter_quiz_app/screens/results_screen.dart';
 import 'package:flutter_quiz_app/screens/start_screen.dart';
 
 class Quiz extends StatefulWidget {
@@ -17,27 +18,37 @@ class _QuizState extends State<Quiz> {
   Widget? activeScreen;
   List<String> selectedAnswers = [];
 
-  void switchScreen() {
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+    if (selectedAnswers.length == questions.length) {
+      redirectToResultsScreen();
+    }
+  }
+
+  void redirectToStart() {
+    setState(() {
+      activeScreen = StartScreen(redirectToQuestions);
+    });
+  }
+
+  void redirectToQuestions() {
     setState(() {
       activeScreen = QuestionsScreen(chooseAnswer);
     });
   }
 
-  void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
-
-    if (selectedAnswers.length == questions.length) {
-      setState(() {
-        selectedAnswers = [];
-        activeScreen = StartScreen(switchScreen);
-      });
-    }
+  void redirectToResultsScreen() {
+    setState(() {
+      activeScreen = ResultsScreen(
+          selectedAnswers: selectedAnswers, redirectToStart: redirectToStart);
+      selectedAnswers = [];
+    });
   }
 
   @override
   void initState() {
     super.initState();
-    activeScreen = StartScreen(switchScreen);
+    activeScreen = StartScreen(redirectToQuestions);
   }
 
   @override
