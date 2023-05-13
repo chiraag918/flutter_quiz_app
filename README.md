@@ -1,16 +1,14 @@
 # flutter_quiz_app
 
-A new Flutter project.
+A cross-platform Quiz App built using Flutter/Dart. Main target platforms are android & iOS. 
 
-## Getting Started
+App has 3 screens: 
+- Start screen: User can start the quiz from here. User gets directed to the Questions screen. 
+- Questions screen: User can take the quiz from here. User is presented with questions and can choose an answer out of 4 options. On choosing an option, the next question will be presented. On answering the final question, user gets directed to results screen. 
+- Results screen: Summary of the quiz is presented to the user here. The no. of questions the user answered along with detailed analysis of each question & answer is available here. The user can also opt to re-take the quiz from here. 
 
-This project is a starting point for a Flutter application.
+<img width="489" alt="Screenshot 2023-05-14 at 2 23 47 AM" src="https://github.com/chiraag918/flutter_quiz_app/assets/39455997/75c64a06-f222-484e-bc29-caa480219d6a">
 
-A few resources to get you started if this is your first Flutter project:
+<img width="489" alt="Screenshot 2023-05-14 at 2 24 36 AM" src="https://github.com/chiraag918/flutter_quiz_app/assets/39455997/99cb3aa7-ca87-48b1-803e-65cae737299a">
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="491" alt="Screenshot 2023-05-14 at 2 25 21 AM" src="https://github.com/chiraag918/flutter_quiz_app/assets/39455997/1fb452c2-63bc-4468-b04b-8d40b0d9c858">
