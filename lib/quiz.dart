@@ -25,6 +25,12 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  void redirectToStart() {
+    setState(() {
+      activeScreen = StartScreen(redirectToQuestions);
+    });
+  }
+
   void redirectToQuestions() {
     setState(() {
       activeScreen = QuestionsScreen(chooseAnswer);
@@ -34,8 +40,7 @@ class _QuizState extends State<Quiz> {
   void redirectToResultsScreen() {
     setState(() {
       activeScreen = ResultsScreen(
-          selectedAnswers: selectedAnswers,
-          redirectToStart: redirectToQuestions);
+          selectedAnswers: selectedAnswers, redirectToStart: redirectToStart);
       selectedAnswers = [];
     });
   }
