@@ -8,12 +8,14 @@ class StyledText extends StatelessWidget {
     this.fontColor = Colors.white,
     required this.fontSize,
     this.googleFont = false,
+    this.textAlign = TextAlign.center,
   });
 
   final String text;
   final Color fontColor;
   final double fontSize;
   final bool googleFont;
+  final TextAlign textAlign;
 
   @override
   Widget build(context) {
@@ -23,7 +25,7 @@ class StyledText extends StatelessWidget {
           ? GoogleFonts.lato(
               color: fontColor, fontSize: fontSize, fontWeight: FontWeight.bold)
           : TextStyle(color: fontColor, fontSize: fontSize),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
     );
   }
 }

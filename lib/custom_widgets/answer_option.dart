@@ -16,7 +16,7 @@ class AnswerOption extends StatelessWidget {
           vertical: 5,
           horizontal: 40,
         ),
-        backgroundColor: Color.fromARGB(255, 50, 0, 96),
+        backgroundColor: const Color.fromARGB(255, 50, 0, 96),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40),
         ),
